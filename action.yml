@@ -1,8 +1,14 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'container tag'
+description: 'generate docker container versions and names'
+inputs:
+  dockerhub_namespace:
+    required: true
+    description: 'your dockerhub namespace/username, for the docker image'
 outputs:
+  image:
+    description: 'the docker container name, derived from the repository name'
   version: # id of output
-    description: 'The time we greeted you'
+    description: 'the container version, favoring tags'
 runs:
   using: 'docker'
   image: 'Dockerfile'
